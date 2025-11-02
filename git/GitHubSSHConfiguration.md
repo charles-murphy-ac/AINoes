@@ -19,7 +19,7 @@
 打开终端（Windows 用 PowerShell，Mac/Linux 用 Terminal），输入：
 
 ``` bash
-ls -la ~/.ssh
+    ls -la ~/.ssh
 ```
 
 -   若存在 `id_rsa` 和 `id_rsa.pub` 文件，说明已有密钥。
@@ -28,7 +28,7 @@ ls -la ~/.ssh
 #### 2. 生成新的 SSH 密钥
 
 ``` bash
-ssh-keygen -t rsa -C "your_github_email@example.com"
+    ssh-keygen -t rsa -C "your_github_email@example.com"
 ```
 
 执行后按提示一路回车即可。
@@ -40,19 +40,19 @@ ssh-keygen -t rsa -C "your_github_email@example.com"
 **Windows:**
 
 ``` bash
-cat ~/.ssh/id_rsa.pub | clip
+    cat ~/.ssh/id_rsa.pub | clip
 ```
 
 **Mac:**
 
 ``` bash
-pbcopy < ~/.ssh/id_rsa.pub
+    pbcopy < ~/.ssh/id_rsa.pub
 ```
 
 **Linux:**
 
 ``` bash
-xclip -sel clip < ~/.ssh/id_rsa.pub
+    xclip -sel clip < ~/.ssh/id_rsa.pub
 ```
 
 #### 4. 将公钥添加到 GitHub
@@ -65,7 +65,7 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 #### 5. 测试 SSH 连接
 
 ``` bash
-ssh -T git@github.com
+    ssh -T git@github.com
 ```
 
 出现以下提示即表示配置成功：
@@ -109,7 +109,7 @@ Host github.com
 #### 3. 测试 SSH 连接
 
 ``` bash
-ssh -T git@github.com
+    ssh -T git@github.com
 ```
 
 若成功出现：
@@ -122,7 +122,6 @@ ssh -T git@github.com
 
 ## ✅ 总结
 
--   若无法通过 SSH 克隆仓库，请先确认 **SSH 密钥** 是否配置正确。\
--   若密钥无误但连接仍失败，可通过 **SSH 443 端口 + VPN 隧道**
-    的方式绕过网络限制。\
+-   若无法通过 SSH 克隆仓库，请先确认 **SSH 密钥** 是否配置正确。
+-   若密钥无误但连接仍失败，可通过 **SSH 443 端口 + VPN 隧道**的方式绕过网络限制。
 -   上述方法可稳定解决大多数 GitHub SSH 连接问题。
